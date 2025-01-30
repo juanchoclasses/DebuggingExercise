@@ -31,8 +31,9 @@ public class ShippingCostCalculator {
    */
   public double getShippingCost(int index) {
     double shippingCost = 0;
-    if (this.productPrices[index] < 250) {
-      return this.productPrices[index] * 0.2;
+    double roundedPrice = Math.round(this.productPrices[index]);
+    if (roundedPrice < 25) {
+      return roundedPrice * 0.2;
     }
     return shippingCost;
   }
